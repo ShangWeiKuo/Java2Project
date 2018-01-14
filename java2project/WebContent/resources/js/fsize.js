@@ -1,0 +1,1 @@
+$(selector).jfontsize(opcoes);
