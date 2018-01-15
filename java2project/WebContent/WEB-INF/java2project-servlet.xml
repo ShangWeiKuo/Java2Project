@@ -19,7 +19,7 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd
 http://www.springframework.org/schema/util 
 http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 	<!-- Scanning enablement on package -->
-	<context:component-scan base-package="tw.edu.nuk.java2.controller, tw.edu.nuk.java2.daoimpl, tw.edu.nuk.java2.domain" />
+	<context:component-scan base-package="tw.edu.nuk.java2.controller, tw.edu.nuk.java2.daoimpl, tw.edu.nuk.java2.domain, tw.edu.nuk.java2.util" />
 	<aop:aspectj-autoproxy/>
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
@@ -45,7 +45,7 @@ http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/201708pra" />
+		<property name="url" value="jdbc:mysql://localhost:3306/201708pra?useUnicode=true&amp;characterEncoding=UTF-8" />
 		<property name="username" value="root" />
 		<property name="password" value="295@025*2" />
 	</bean>
@@ -69,13 +69,16 @@ http://www.springframework.org/schema/util/spring-util-3.2.xsd">
         </property>
     </bean>
     
+    <mvc:annotation-driven />
     <mvc:resources mapping="/resources/**" location="/resources/" /> 
-	<mvc:annotation-driven />
+    
 	
     <tx:annotation-driven />
     <!-- Hibernate: Setup TransactionManager -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+	
 
+	
 </beans>

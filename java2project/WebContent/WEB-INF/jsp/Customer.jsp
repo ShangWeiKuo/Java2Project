@@ -16,30 +16,18 @@
 				<td><form:input type="text" path="name"/></td>
 			</tr>
 			<tr>
-				<td>*報案人帳號</td>
-				<td><form:input type="text" path="uname"/></td>
+				<td>*報案人電話</td>
+				<td><form:input type="text" path="phone"/></td>
 			</tr>
 			<tr>
-				<td>*報案人密碼</td>
+				<td>*案件地點</td>
 				<td>
-					<form:input type="text" path="pwd"/>
+					<form:input type="text" path="location"/>
 				</td>
 			</tr>
 			<tr>
-				<td>*電話號碼</td>
-				<td><form:input type="text" name="phone" class="txt" path="phone"/></td>
-			</tr>
-			<tr>
-				<td>*是否要當管理員?</td>
-				<td>
-					<form>
-					<input type="hidden" value="on" name="_active">
-					<input type="radio" name="isadmin" class="txt" value="1" path="isadmin" />是
-					&nbsp;
-					&nbsp;
-					<input type="radio" name="isadmin" class="txt" value="0" path="isadmin" />否
-					</form>
-				</td>
+				<td>*案件情形</td>
+				<td><form:input type="text" name="content" class="txt" path="content"/></td>
 			</tr>
 		</table>
 </body>

@@ -9,13 +9,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/mystyle.css" />" rel="stylesheet" type="text/css">
-<title>客戶資料瀏覽</title>
+<title>案件資料瀏覽</title>
   <script type="application/javascript">
 
         function ready() {            
 			document.getElementById("name").value = getQueryString("name");
-			document.getElementById("uname").value = getQueryString("uname");
-			document.getElementById("pwd").value = getQueryString("pwd");
+			document.getElementById("phone").value = getQueryString("phone");
+			document.getElementById("location").value = getQueryString("location");
+			document.getElementById("content").value = getQueryString("content");
         }
         
         function getQueryString(name){
@@ -34,23 +35,25 @@
 		<table class="frame">
 			<tr>
 				<td>報案人</td>
-				<td><input type="text" id="name" name="name" class="txt"
-					 /></td>
+				<td><input type="text" name="name" class="txt" /></td>
 			</tr>
 			<tr>
-				<td>報案人帳號</td>
-				<td><input type="text" id="uname" name="uname" class="txt"  /></td>
+				<td>報案人電話</td>
+				<td><input type="text" name="phone" class="txt" /></td>
 			</tr>
 			<tr>
-				<td>報案人密碼</td>
-				<td><input type="text" id="pwd" name="pwd" class="txt"
-					 /></td>
+				<td>案件地點</td>
+				<td><input type="text" name="location" class="txt"/></td>
+			</tr>
+			<tr>
+				<td>案件情形</td>
+				<td><input type="text" name="content" class="txt"/></td>
 			</tr>
 		</table>
 		<button type="submit" formaction="${pageContext.request.contextPath}/insert" formmethod="get">新增</button>
 		<button type="submit" formaction="${pageContext.request.contextPath}/query"  formmethod="get">查詢</button>
 		<button type="reset">清除</button>
-
+		<button type="submit" formaction="${pageContext.request.contextPath}/"  formmethod="get">首頁</button>
 		
 		<table class="frame">
 			<tr>
@@ -58,52 +61,38 @@
 				<th></th>
 				<th>編號</th>
 				<th>報案人</th>
-				<th>報案人帳號</th>
-				<th>報案人密碼</th>
-				<th>電話號碼</th>
-				<th>是否為管理員</th>
+				<th>報案人電話</th>
+				<th>案件地點</th>
+				<th>案件情形</th>
 			</tr>
-			<c:forEach var="perinfo" items="${perinfo}">
+			<c:forEach var="newinfo" items="${newinfo}">
 				<tr>
 					<c:url var="updateURL" value="update">
-						<c:param name="no" value="${perinfo.no}" />
+						<c:param name="no" value="${newinfo.no}" />
 						<c:param name="name" value="${name}" />
-						<c:param name="uname" value="${uname}" />
-						<c:param name="pwd" value="${pwd}" />
+						<c:param name="phone" value="${phone}" />
+						<c:param name="location" value="${location}" />
+						<c:param name="content" value="${content}" />
 					</c:url>
 					<td><a href="${updateURL}"/>修改</a></td>
 					<c:url var="deletionURL" value="delete">
-						<c:param name="no" value="${perinfo.no}" />
+						<c:param name="no" value="${newinfo.no}" />
 						<c:param name="name" value="${name}" />
-						<c:param name="uname" value="${uname}" />
-						<c:param name="pwd" value="${pwd}" />
+						<c:param name="phone" value="${phone}" />
+						<c:param name="location" value="${location}" />
+						<c:param name="content" value="${content}" />
 					</c:url>
 					<td><a href="${deletionURL}"  onclick="return doDeletion()"/>刪除</a></td>
-					<td>${perinfo.no}</td>
-					<td>${perinfo.name}</td>
-					<td>${perinfo.uname}</td>
-					<td>${perinfo.pwd}</td>
-					<td>${perinfo.phone}</td>
-					<td>
-					<c:choose>
-    						<c:when test="${perinfo.isadmin=='1'}">
-        						是 
-       	 						<br />
-    						</c:when>    
-    						<c:otherwise>
-        						否 
-        						<br />
-    						</c:otherwise>
-						</c:choose>
-					</td>
+					<td>${newinfo.no}</td>
+					<td>${newinfo.name}</td>
+					<td>${newinfo.phone}</td>
+					<td>${newinfo.location}</td>
+					<td>${newinfo.content}</td>
 				</tr>
 			</c:forEach>
 		</table>
 
-		<button type="submit" formaction="${pageContext.request.contextPath}/insert" formmethod="get">新增</button>
-		<button type="submit" formaction="${pageContext.request.contextPath}/query"  formmethod="get">查詢</button>
-		<button type="reset">清除</button>
-	</form:form>
+		</form:form>
 	<script>
 
 		function doDeletion() {

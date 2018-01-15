@@ -36,30 +36,36 @@ public class ServiceFacade {
 	@Autowired
 	private CustomerDao customerDao;
 	
+	/*@Autowired
+	private LocationDao locationDao;*/
+	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 
-    @RequestMapping(value="/hello", method=RequestMethod.GET)
-	public void sayHello() {
+    @RequestMapping(value="/", method=RequestMethod.GET)
+	public String sayHello() {
+    	return "index";
 	}
 	
-   
     @RequestMapping(value="/insert", method=RequestMethod.GET)
 	public String setupInsertion(Model model) {
     	
-    	Customer perinfo = new Customer();
-    	model.addAttribute("perinfo", perinfo);
+    	Customer newinfo = new Customer();
+    	model.addAttribute("newinfo", newinfo);
+    	/*Location locinfo = new Location();
+    	model.addAttribute("locinfo", locinfo);*/
     	return "Insert";
 	}
     
     @RequestMapping(value="/insert", method=RequestMethod.POST)
 	@Transactional
-	public String doInsertion(@ModelAttribute("perinfo") Customer perinfo, Model model) {
-    	customerDao.saveOrUpdate(perinfo);  
-		model.addAttribute("name", perinfo.getName());
-		model.addAttribute("uname", perinfo.getUname());
-		model.addAttribute("pwd", perinfo.getPwd());
+	public String doInsertion(@ModelAttribute("newinfo") Customer newinfo, Model model) {
+    	customerDao.saveOrUpdate(newinfo);  
+		model.addAttribute("name", newinfo.getName());
+		model.addAttribute("phone", newinfo.getPhone());
+		model.addAttribute("location", newinfo.getLocation());
+		model.addAttribute("content", newinfo.getContent());
     	
     	return "redirect:query";
 	}
@@ -68,23 +74,23 @@ public class ServiceFacade {
     @Transactional
 	public String setupUpdateForm(Model model, @RequestParam(value="no", defaultValue="") String no) {
     	
-    	Customer perinfo = customerDao.get(Long.parseLong(no));
-    	model.addAttribute("perinfo", perinfo);
+    	Customer newinfo = customerDao.get(Long.parseLong(no));
+    	model.addAttribute("newinfo", newinfo);
     	return "Update";
 	}
   
     @RequestMapping(value="/updateConfirm")
-	@Transactional
-	public String doUpdate(@ModelAttribute("perinfo") Customer perinfo, Model model) {
-    	customerDao.saveOrUpdate(perinfo);  
-		model.addAttribute("name", perinfo.getName());
-		model.addAttribute("uname", perinfo.getUname());
-		model.addAttribute("pwd", perinfo.getPwd());
-		model.addAttribute("phone", perinfo.getPhone());
-		model.addAttribute("isadmin", perinfo.getIsadmin());
-    	
-    	return "redirect:query";
-	}
+   	@Transactional
+   	public String doUpdate(@ModelAttribute("newinfo") Customer newinfo, Model model) {
+       	customerDao.saveOrUpdate(newinfo);  
+   		model.addAttribute("name", newinfo.getName());
+   		model.addAttribute("phone", newinfo.getPhone());
+   		model.addAttribute("location", newinfo.getLocation());
+   		model.addAttribute("content", newinfo.getContent());
+       	
+       	return "redirect:query";
+   	}
+       
   /*  
     @RequestMapping(value="/updateConfirm")
 	@Transactional
@@ -125,18 +131,22 @@ public class ServiceFacade {
 	@RequestMapping(value="/query")
 	@Transactional
 	public String doQuery(@RequestParam(value="name", defaultValue="") String name,
-			@RequestParam(value="uname", defaultValue="") String uname,
-			@RequestParam(value="pwd", defaultValue="") String pwd,
+			@RequestParam(value="phone", defaultValue="") String phone,
+			@RequestParam(value="location", defaultValue="") String location,
+			@RequestParam(value="content", defaultValue="") String content,
+			
 			Model model) {
 		Map<String, String> conditions = new HashMap<String,String>();
 		conditions.put("name", name);
-		conditions.put("uname", uname);
-		conditions.put("pwd", pwd);
+		conditions.put("phone", phone);
+		conditions.put("location", location);
+		conditions.put("content", content);
 		
-		model.addAttribute("perinfo", customerDao.search(conditions));
+		model.addAttribute("newinfo", customerDao.search(conditions));
 		model.addAttribute("name", name);
-		model.addAttribute("uname", uname);
-		model.addAttribute("pwd", pwd);
+		model.addAttribute("phone", phone);
+		model.addAttribute("location", location);
+		model.addAttribute("content", content);
 		
 		return "Browse";
 	}
@@ -144,19 +154,19 @@ public class ServiceFacade {
 	@RequestMapping(value="/delete")
 	@Transactional
 	public String doDeletion(@RequestParam(value="name", defaultValue="") String name,
-			@RequestParam(value="uname", defaultValue="") String uname,
-			@RequestParam(value="pwd", defaultValue="") String pwd,
+			@RequestParam(value="phone", defaultValue="") String phone,
+			@RequestParam(value="location", defaultValue="") String location,
+			@RequestParam(value="content", defaultValue="") String content,
 			@RequestParam(value="no", defaultValue="") String no,
 			Model model, HttpServletResponse response) {
 		
 		customerDao.delete(Long.parseLong(no));
 		model.addAttribute("name", name);
-		model.addAttribute("uname", uname);
-		model.addAttribute("pwd", pwd);
+		model.addAttribute("phone", phone);
+		model.addAttribute("location", location);
+		model.addAttribute("content", content);
 		model.addAttribute("no", no);
 				
 		return "redirect:query";
 	}
-	
-
 }

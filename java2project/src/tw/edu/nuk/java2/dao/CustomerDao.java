@@ -7,9 +7,8 @@ import tw.edu.nuk.java2.model.Customer;
 
 public interface CustomerDao {
 	Customer get(long no);
-	void saveOrUpdate(Customer perinfo);
-	void delete(Customer perinfo);
+	void saveOrUpdate(Customer newinfo);
+	void delete(Customer newinfo);
 	void delete(long no);
 	List<Customer> search(Map<String,String> conditions);
-	
 }

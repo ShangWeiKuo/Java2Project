@@ -10,7 +10,7 @@
 <link href="<c:url value="/resources/css/mystyle.css" />" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<form:form name="upd_form" modelAttribute="perinfo">
+	<form:form name="upd_form" modelAttribute="newnfo">
 		<jsp:include page="/WEB-INF/jsp/Customer.jsp" />
 		<button type="submit" formaction="${pageContext.request.contextPath}/updateConfirm" formmethod="post" onclick="return doConfirm()">存檔</button> 
 		<button	type="button" onclick="goBack()">回上一頁</button>

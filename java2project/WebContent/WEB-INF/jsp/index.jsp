@@ -202,7 +202,7 @@
            
         }
 	</script>
-<title>Insert title here</title>
+<title>校園安全報案管理系統</title>
 </head>
 <body onload="ready()">
 <%
@@ -267,7 +267,7 @@
 	<header>
 		<div class="top-bar">
 		<div class="icontop">
-			<img src="/resources/image/safe.png" width="100px" height="100px">
+			<img src="resources/image/safe.png" width="100px" height="100px">
 		</div>
 		
 		
@@ -279,16 +279,16 @@
         <div class="slide-viewer">
           <div class="slide-group">
             <div class="slide slide-1">
-              <img src="/resources/image/interstellar.jpg" alt="No two are the same" />
+              <img src="resources/image/interstellar.jpg" alt="No two are the same" />
             </div>
             <div class="slide slide-2">
-              <img src="/resources/image/paper.jpg" alt="Monsieur Mints"  />
+              <img src="resources/image/paper.jpg" alt="Monsieur Mints"  />
             </div>
             <div class="slide slide-3">
-              <img src="/resources/image/sunset.jpg" alt="The Flower Series"  />
+              <img src="resources/image/sunset.jpg" alt="The Flower Series"  />
             </div>
             <div class="slide slide-4">
-              <img src="/resources/image/schlog.jpg" alt="Salt o' The Sea"  />
+              <img src="resources/image/schlog.jpg" alt="Salt o' The Sea"  />
             </div>
           </div>
         </div>
@@ -300,38 +300,6 @@
 
 	
 	<div >
-		<div class="listsize">
-			<!--<ul id="navWrapper">
-				<li><a href="">創隊宗旨</a></li>
-				<li>List 1</li>
-				<li>
-					<a href="#">List 1</a>
-					<ul>
-						<li><a href="#">First</a></li>
-                		<li><a href="#">Second</a></li>
-                		<li><a href="#">Third</a></li>
-					</ul>
-				</li>
-			</ul>-->
-			<ul class="accordion" id="navWrapper">
-				<li>
-					<a class="accordion-control">創隊宗旨</a>
-					<div class="accordion-panel">
-						Panel
-					</div>
-				</li>
-				<li>
-					<a class="accordion-control">List2</a>
-						<div class="accordion-panel">
-							<ul>
-								<li>list1</li>
-								<li>list2</li>
-								<li>list3</li>
-							</ul>
-						</div>	
-				</li>
-			</ul>
-		</div>
 
 	<h1>病蟲害報案</h1>
 <br/>
@@ -342,12 +310,16 @@
 				<td><input type="text" name="name" class="txt" /></td>
 			</tr>
 			<tr>
-				<td>報案人帳號</td>
-				<td><input type="text" name="uname" class="txt" /></td>
+				<td>報案人電話</td>
+				<td><input type="text" name="phone" class="txt" /></td>
 			</tr>
 			<tr>
-				<td>報案人密碼</td>
-				<td><input type="text" name="pwd" class="txt"/></td>
+				<td>案件地點</td>
+				<td><input type="text" name="location" class="txt"/></td>
+			</tr>
+			<tr>
+				<td>案件情形</td>
+				<td><input type="text" name="content" class="txt"/></td>
 			</tr>
 		</table>
 		<button type="submit" formaction="${pageContext.request.contextPath}/insert" formmethod="get">新增</button>
@@ -356,7 +328,7 @@
 	</form:form>
 
 	<div class="pos2">
-		<img src="/resources/image/check-in-g.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+		<img src="resources/image/check-in-g.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
 	</div>
 
 	<div class="pos3">
@@ -365,8 +337,8 @@
 		
 		</div>
 	</div>
-	<script src="/js/jquery-3.2.1.min.js"></script>
-	<script src="/js/slider.js"></script>
-	<script src="/js/accordion.js"></script>
+	<script src="resources/js/jquery-3.2.1.min.js"></script>
+	<script src="resources/js/slider.js"></script>
+	<script src="resources/js/accordion.js"></script>
 </body>
 </html>

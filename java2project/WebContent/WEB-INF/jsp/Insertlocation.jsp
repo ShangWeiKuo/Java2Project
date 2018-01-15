@@ -10,9 +10,9 @@
 <link href="<c:url value="/resources/css/mystyle.css" />" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<form:form name="form" modelAttribute="newinfo">
+	<form:form name="form" modelAttribute="locinfo">
 		<jsp:include page="/WEB-INF/jsp/Customer.jsp" />
-		<button type="submit" formaction="${pageContext.request.contextPath}/insert" formmethod="post" onclick="return doConfirm()">存檔</button>
+		<button type="submit" formaction="${pageContext.request.contextPath}/insertlocation" formmethod="post" onclick="return doConfirm()">存檔</button>
 		<button	type="button" onclick="goBack()">回上一頁</button>
 	</form:form>
 	<script>	
