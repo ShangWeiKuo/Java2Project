@@ -2,6 +2,7 @@
     pageEncoding="UTF-8" import="java.net.URLEncoder" import="java.net.URLDecoder"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,17 +26,17 @@
 		{
 			position:absolute;
 			
-			margin-left: 300px;
-			width: 1300px;
-			height: 1300px;
+			/*margin-left: 50px;*/
+			/*width: 500px;
+			height: 200px;*/
 			z-index:1;
 			float: left;
 		}
 		.pos2
 		{
 			position:absolute;
-			margin-top: 250px;
-			margin-left: 880px;
+			margin-top: 180px;
+			margin-left: 650px;
 			width: 50px;
 			height: 50px;
 			z-index:2;
@@ -44,21 +45,24 @@
 		{
 			position:absolute;
 			margin-top: 160px;
-			margin-left: 890px;
+			margin-left: 650px;
 			width: 100px;
 			height: 100px;
 			z-index:3;
 		}
 		.icontop
 		{
-			width: 1700px;
-			text-align: center;
+			/*width: 1700px;*/
+			/*text-align: center;*/
+			/*height:112.6px;*/
+			padding-left: 50px;
 		}
 		.listsize
 		{
-			width: 200px;
-			padding-top: 85px;
+			width: 400px;
+			/*padding-top: 85px;*/
 			float: left;
+			/*margin-top:1px;*/
 		}
 		.content
 		{
@@ -96,10 +100,47 @@
       		text-decoration: none;
     	}
 
-    	.accordion-panel
+    	.accordion, .menu 
     	{
-    		display: none;
-    	}
+			background-color: #f2f2f2;
+			color: #666;
+			margin: 0;
+			padding: 0;
+			/*overflow: auto;*/
+		}
+
+		.accordion li 
+		{
+			padding: 0;
+  			list-style-type: none;
+  		}
+
+		.accordion-control
+		{
+			background-color: #32b3bf;
+			color: #fff;
+			display: block;
+			width: 100%;
+			padding: 1.01em 0.38em 0.5em 0.7em;
+			margin: 0;
+			border-top: 1px solid #666
+		}
+
+		.accordion-panel 
+		{
+  			display: none;
+  		}
+
+		.accordion-panel p 
+		{
+			margin: 20px;
+		}
+		
+		.accordion-panel img 
+		{
+			display: block;
+			clear: left;
+		}
     
     a:hover {
       text-decoration: underline;
@@ -125,7 +166,7 @@
 		{
 			position: relative;
 			overflow: hidden;
-			height: 300px;
+			height: 600px;
 		}
 		.slide-group
 		{
@@ -169,13 +210,39 @@
 			box-shadow: 0px 8px 15px #333;*/
 			background:#32b3bf;
 			z-index: 3;
+			width: 1503px;
   		}
+  		.top-title
+  		{
+  			index: 3;
+  			font-size: 50px;
+  			font-weight: bold;
+  			font-family: Microsoft JhengHei;
+			padding-left: 50px;
+			vertical-align: 25px;
+  		}
+  		.top-button
+  		{
+  			
+			/*padding-left: 50px;*/
+			
+  		}
+  		.top-button-bgcolor
+  		{
+  			color: #000000;
+  		}
+  		.for-fieldset
+  		{
+  			position:absolute;
+			z-index:1;
+  		}
+  		
 	</style>
 	<script>
 		function mouse() 
 		{
 			var element = document.getElementById('pic');
-
+	
 			if (element.style.visibility == 'hidden') 
 			{
 				element.style.visibility = 'visible';
@@ -185,12 +252,15 @@
 				element.style.visibility = 'hidden';
 			}
 		}
+	</script>
+	<script type="application/javascript">
 		
-		function ready() {            
-			document.getElementById("name").value = getQueryString("name");
-			document.getElementById("uname").value = getQueryString("uname");
-			document.getElementById("pwd").value = getQueryString("pwd");
-        }
+		 function ready() {            
+				document.getElementById("name").value = getQueryString("name");
+				document.getElementById("phone").value = getQueryString("phone");
+				document.getElementById("location").value = getQueryString("location");
+				document.getElementById("content").value = getQueryString("content");
+	        }
         
         function getQueryString(name){
 
@@ -202,108 +272,90 @@
            
         }
 	</script>
+	<link href="<c:url value="/resources/css/mystyle.css" />" rel="stylesheet" type="text/css">
 <title>校園安全報案管理系統</title>
 </head>
-<body onload="ready()">
-<%
-		/* Cookie[] cookies = request.getCookies();
-		String inputname = "";
-		
-		for(int i=0; cookies!=null && i<cookies.length; i++)
-		{
-			//out.print(cookies[i].getValue());
-			Cookie cookie = cookies[i];
-			
-			if("username".equals(cookie.getName()))
-			{
-				inputname = URLDecoder.decode(cookie.getValue(),"utf-8");
-				//inputname = cookie.getValue();
-			}
-		} */
-	%>
-	<%
-		/*Cookie[] cookiespass = request.getCookies();
-		String inputpass = "";
-	
-		for(int i=0; cookiespass!=null && i<cookiespass.length; i++)
-		{
-			Cookie cookiepwd = cookiespass[i];
-		
-			if("userpass".equals(cookiepwd.getName()))
-			{
-				inputpass = cookiepwd.getValue();
-			}
-		}*/
-	%>
-	<%
-		/*String name = request.getParameter("uname");
-		String pass = request.getParameter("upass");
-		String Cname = "郭";
-		String Cpass = "123";
-		
-		if (name != null)
-		{
-			String name2 = new String(name.getBytes("ISO-8859-1"),"utf-8");
-			
-			HttpSession pra = request.getSession();
-			pra.removeAttribute("Name");
-			
-			if (Cname.equals(name2) && Cpass.equals(pass))
-			{
-				pra.setAttribute("Name","郭");
-				
-				Cookie usernamecookie = new Cookie(URLEncoder.encode("username"),URLEncoder.encode(name2));
-				response.addCookie(usernamecookie);
-				
-				Cookie userpass = new Cookie("userpass",pass);
-				response.addCookie(userpass);
-			}
-			else
-			{
-				out.print("Wrong Username or Password");
-			}
-		} */
-	%>
+<body onload="ready()" bgcolor="#DDDDDD">
+
 	<header>
+		
 		<div class="top-bar">
-		<div class="icontop">
-			<img src="resources/image/safe.png" width="100px" height="100px">
-		</div>
-		
-		
+			<span class="top-button">
+				<div class="listsize">
+					<ul class="accordion" id="navWrapper">
+						<li>
+							<a class="accordion-control">
+								<img src="resources/image/button2.png" height="36px">
+							</a>
+							<div class="accordion-panel" >
+								<div class="top-button-bgcolor">
+									<a href="#case" style="font-family: Microsoft JhengHei;">我要報案</a>
+									&nbsp;
+									<a href="#picture" style="font-family: Microsoft JhengHei;">校園巡邏案件現況</a>
+									&nbsp;
+									<a href="http://www.nuk.edu.tw/bin/home.php" target="new" style="font-family: Microsoft JhengHei;">回高大</a> 
+								</div>	
+							</div>
+						</li>
+					</ul>
+				</div>
+			</span>
+			
+			<span class="icontop">
+				<a href="/java2project/" style="text-decoration: none; ">
+					<img src="resources/image/safe.png" width="100px" height="100px">
+				</a>
+			</span>
+			
+			<span class="top-title">
+				校園安全報案管理系統
+			</span>
       	</div>
 	</header>
-	<section style="margin-left: 150px; padding-top:200px;">
+	
+	<section style="padding-top:100px;">
 	
       <div class="slider">
         <div class="slide-viewer">
           <div class="slide-group">
             <div class="slide slide-1">
-              <img src="resources/image/interstellar.jpg" alt="No two are the same" />
+              <img src="resources/image/info1.png" alt="No two are the same" width="100%"/>
             </div>
             <div class="slide slide-2">
-              <img src="resources/image/paper.jpg" alt="Monsieur Mints"  />
+              <img src="resources/image/info2.png" alt="Monsieur Mints" width="100%" height="100%"/>
             </div>
             <div class="slide slide-3">
-              <img src="resources/image/sunset.jpg" alt="The Flower Series"  />
+              <img src="resources/image/info3.png" alt="The Flower Series" width="100%" height="100%" />
             </div>
             <div class="slide slide-4">
-              <img src="resources/image/schlog.jpg" alt="Salt o' The Sea"  />
+              <img src="resources/image/info4.png" alt="Salt o' The Sea" width="100%" height="100%" />
             </div>
           </div>
         </div>
         <div class="slide-buttons">
         </div>
       </div>
-	
+	<a href="case" name="case"></a>
     </section>
-
 	
-	<div >
-
-	<h1>病蟲害報案</h1>
-<br/>
-	<form:form id="main">
+	<br>
+	<br>
+	<br>
+	
+	<center>
+		<h1 style="font-family: Microsoft JhengHei;">
+		<hr style="width:42%; display:inline-block;" size="3" color="gray">
+			
+				我要報案
+			
+		<hr style="width:42%; display:inline-block;" size="3" color="gray">
+		</h1>
+		<br>
+		<br>
+	 
+	<form:form  id="form"  modelAttribute="customers">
+		<center>
+		<fieldset style="width:300px">
 		<table class="frame">
 			<tr>
 				<td>報案人</td>
@@ -325,20 +377,119 @@
 		<button type="submit" formaction="${pageContext.request.contextPath}/insert" formmethod="get">新增</button>
 		<button type="submit" formaction="${pageContext.request.contextPath}/query" formmethod="get">查詢</button>
 		<button type="reset">清除</button>
-	</form:form>
-
-	<div class="pos2">
-		<img src="resources/image/check-in-g.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
-	</div>
-
-	<div class="pos3">
-		<!--<img src="../image/talk.png" class="talksize" style="visibility: hidden;" id="pic">-->
-		<div class="talksize" style="visibility: hidden;" id="pic">
+		</fieldset>
+		</center>
+		<br>
+		<br>
 		
+		<table class="frame">
+			<tr>
+				<th></th>
+				<th></th>
+				<th>編號</th>
+				<th>報案人</th>
+				<th>報案人電話</th>
+				<th>案件地點</th>
+				<th>案件情形</th>
+			</tr>
+		<c:forEach var="newinfo" items="${newinfo}">
+				<tr>
+					<c:url var="updateURL" value="update">
+						<c:param name="no" value="${newinfo.no}" />
+						<c:param name="name" value="${name}" />
+						<c:param name="phone" value="${phone}" />
+						<c:param name="location" value="${location}" />
+						<c:param name="content" value="${content}" />
+					</c:url>
+					<td><a href="${updateURL}"/>修改</a></td>
+					<c:url var="deletionURL" value="delete">
+						<c:param name="no" value="${newinfo.no}" />
+						<c:param name="name" value="${name}" />
+						<c:param name="phone" value="${phone}" />
+						<c:param name="location" value="${location}" />
+						<c:param name="content" value="${content}" />
+					</c:url>
+					<td><a href="${deletionURL}"  onclick="return doDeletion()"/>刪除</a></td>
+					<td>${newinfo.no}</td>
+					<td>${newinfo.name}</td>
+					<td>${newinfo.phone}</td>
+					<td>${newinfo.location}</td>
+					<td>${newinfo.content}</td> 
+					
+			</tr>
+			
+		</c:forEach> 
+		</table>
+		
+	</form:form>
+	 
+	</center>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+		<center>
+		<h1  style="font-family: Microsoft JhengHei;">
+		<hr style="width:35.9%; display:inline-block;" size="3" color="gray">
+			<a name="picture">
+				校園巡邏案件現況
+			</a>
+		<hr style="width:35.9%; display:inline-block;" size="3" color="gray">
+		</h1>
+		</center>
+		
+		<div class="pos1">
+			<img src="resources/image/school.gif" width="1400px" height="1000px">
 		</div>
-	</div>
+		
+		<div class="pos2">
+			<img src="resources/image/check-in-g.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic">
+					<div style="background-color:gray;">
+						<c:forEach var="newinfo" items="${newinfo}">
+							<c:set var="salary" value="${newinfo.location}"/>
+							<c:set var="num" value="${0}"/>
+								<c:if test="${salary == '圖資館'}">
+									<c:set var="num" value="${num + 1}" />
+								</c:if>
+						</c:forEach>
+					目前有${num}人巡邏
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		   			
+				
+		<!-- 
+		<c:forEach var="newinfo" items="${newinfo}">
+			<c:set var="salary" value="${newinfo.location}"/>
+				<c:if test="${salary == '圖資館'}">
+				</c:if>
+		</c:forEach>
+			<div class="pos3">
+				<div class="talksize" style="visibility: hidden;" id="pic">
+				<img src="resources/image/talk.png" >
+				</div>
+			</div>
+		 -->
+	
 	<script src="resources/js/jquery-3.2.1.min.js"></script>
 	<script src="resources/js/slider.js"></script>
 	<script src="resources/js/accordion.js"></script>
+	<script>
+
+		function doDeletion() {
+			return confirm("確定刪除嗎 ?");
+		}
+	</script>
 </body>
 </html>
