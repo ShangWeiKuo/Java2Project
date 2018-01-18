@@ -260,6 +260,7 @@
 				document.getElementById("phone").value = getQueryString("phone");
 				document.getElementById("location").value = getQueryString("location");
 				document.getElementById("content").value = getQueryString("content");
+				
 	        }
         
         function getQueryString(name){
@@ -379,112 +380,12 @@
 		<button type="reset">清除</button>
 		</fieldset>
 		</center>
-		<br>
-		<br>
 		
-		<table class="frame">
-			<tr>
-				<th></th>
-				<th></th>
-				<th>編號</th>
-				<th>報案人</th>
-				<th>報案人電話</th>
-				<th>案件地點</th>
-				<th>案件情形</th>
-			</tr>
-		<c:forEach var="newinfo" items="${newinfo}">
-				<tr>
-					<c:url var="updateURL" value="update">
-						<c:param name="no" value="${newinfo.no}" />
-						<c:param name="name" value="${name}" />
-						<c:param name="phone" value="${phone}" />
-						<c:param name="location" value="${location}" />
-						<c:param name="content" value="${content}" />
-					</c:url>
-					<td><a href="${updateURL}"/>修改</a></td>
-					<c:url var="deletionURL" value="delete">
-						<c:param name="no" value="${newinfo.no}" />
-						<c:param name="name" value="${name}" />
-						<c:param name="phone" value="${phone}" />
-						<c:param name="location" value="${location}" />
-						<c:param name="content" value="${content}" />
-					</c:url>
-					<td><a href="${deletionURL}"  onclick="return doDeletion()"/>刪除</a></td>
-					<td>${newinfo.no}</td>
-					<td>${newinfo.name}</td>
-					<td>${newinfo.phone}</td>
-					<td>${newinfo.location}</td>
-					<td>${newinfo.content}</td> 
-					
-			</tr>
-			
-		</c:forEach> 
-		</table>
 		
 	</form:form>
 	 
 	</center>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	
-		<center>
-		<h1  style="font-family: Microsoft JhengHei;">
-		<hr style="width:35.9%; display:inline-block;" size="3" color="gray">
-			<a name="picture">
-				校園巡邏案件現況
-			</a>
-		<hr style="width:35.9%; display:inline-block;" size="3" color="gray">
-		</h1>
-		</center>
-		
-		<div class="pos1">
-			<img src="resources/image/school.gif" width="1400px" height="1000px">
-		</div>
-		
-		<div class="pos2">
-			<img src="resources/image/check-in-g.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
-			<div>
-				<div class="talksize" style="visibility: hidden;" id="pic">
-					<div style="background-color:gray;">
-						<c:forEach var="newinfo" items="${newinfo}">
-							<c:set var="salary" value="${newinfo.location}"/>
-							<c:set var="num" value="${0}"/>
-								<c:if test="${salary == '圖資館'}">
-									<c:set var="num" value="${num + 1}" />
-								</c:if>
-						</c:forEach>
-					目前有${num}人巡邏
-						
-					</div>
-				</div>
-			</div>
-		</div>
-		   			
-				
-		<!-- 
-		<c:forEach var="newinfo" items="${newinfo}">
-			<c:set var="salary" value="${newinfo.location}"/>
-				<c:if test="${salary == '圖資館'}">
-				</c:if>
-		</c:forEach>
-			<div class="pos3">
-				<div class="talksize" style="visibility: hidden;" id="pic">
-				<img src="resources/image/talk.png" >
-				</div>
-			</div>
-		 -->
-	
-	<script src="resources/js/jquery-3.2.1.min.js"></script>
-	<script src="resources/js/slider.js"></script>
-	<script src="resources/js/accordion.js"></script>
 	<script>
 
 		function doDeletion() {
