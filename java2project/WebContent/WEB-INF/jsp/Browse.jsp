@@ -15,8 +15,8 @@
 		}
 		.talksize
 		{
-			width: 100px;
-			height: 200px;
+			width: 50px;
+			height: 50px;
 		}
 		.bodysize
 		{
@@ -35,8 +35,6 @@
 		.pos2
 		{
 			position:absolute;
-			margin-top: 180px;
-			margin-left: 650px;
 			width: 50px;
 			height: 50px;
 			z-index:2;
@@ -252,6 +250,174 @@
 				element.style.visibility = 'hidden';
 			}
 		}
+		
+		function mouse2() 
+		{
+			var element = document.getElementById('pic2');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse3() 
+		{
+			var element = document.getElementById('pic3');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse4() 
+		{
+			var element = document.getElementById('pic4');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse5() 
+		{
+			var element = document.getElementById('pic5');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse6() 
+		{
+			var element = document.getElementById('pic6');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse7() 
+		{
+			var element = document.getElementById('pic7');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse8() 
+		{
+			var element = document.getElementById('pic8');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse9() 
+		{
+			var element = document.getElementById('pic9');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse10() 
+		{
+			var element = document.getElementById('pic10');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse11() 
+		{
+			var element = document.getElementById('pic11');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse12() 
+		{
+			var element = document.getElementById('pic12');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
+		
+		function mouse13() 
+		{
+			var element = document.getElementById('pic13');
+	
+			if (element.style.visibility == 'hidden') 
+			{
+				element.style.visibility = 'visible';
+			}
+			else
+			{
+				element.style.visibility = 'hidden';
+			}
+		}
 	</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="/resources/css/mystyle.css" />" rel="stylesheet" type="text/css">
@@ -276,7 +442,7 @@
         }
 	</script>	
 </head>
-<body onload="ready()">
+<body onload="ready()" bgcolor="#DDDDDD">
 	<header>
 		
 		<div class="top-bar">
@@ -354,7 +520,6 @@
 		
 		<br>
 		<br>
-		
 		<table class="frame">
 			<tr>
 				<th></th>
@@ -409,7 +574,7 @@
 		<h1  style="font-family: Microsoft JhengHei;">
 		<hr style="width:35.9%; display:inline-block;" size="4" color="gray">
 			<a name="picture">
-				校園巡邏案件現況
+				校園疫情案件現況
 			</a>
 		<hr style="width:35.9%; display:inline-block;" size="4" color="gray">
 		</h1>
@@ -419,24 +584,512 @@
 			<img src="resources/image/school.gif" width="1400px" height="1000px">
 		</div>
 		
-		<div class="pos2">
-			<img src="resources/image/check-in-g.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+		<div class="pos2" style="margin-top: 310px; margin-left: 840px;">
+			<c:set var="lnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building" value="${newinfo.location}"/>
+						<c:if test="${building == '圖資館'}">
+							<c:set var="lnum" value="${lnum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty lnum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+				</c:if>
+				<c:if test="${lnum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+				</c:if>
+				<c:if test="${lnum > 5} && ${lnum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+				</c:if>
+				<c:if test="${lnum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+				</c:if>
+				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic">
 					<div style="background-color:gray;">
-						<c:set var="num" value="0"/>
-							<c:forEach var="newinfo" items="${newinfo}">
-								<c:set var="salary" value="${newinfo.location}"/>
-									<c:if test="${salary == '圖資館'}">
-										<c:set var="num" value="${num+1}"/>
-									</c:if>
-							</c:forEach>
-						共發生${num }件
+						<div style="background-color:gray;">
+						<c:if test="${empty lnum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty lnum}">
+							共發生${lnum}件
+						</c:if>
+					</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	
+		<div class="pos2" style="margin-top: 310px; margin-left: 720px;">
+			<c:set var="lnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building2" value="${newinfo.location}"/>
+						<c:if test="${building2 == '行政大樓'}">
+							<c:set var="anum" value="${anum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty anum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
+				</c:if>
+				<c:if test="${anum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
+				</c:if>
+				<c:if test="${anum > 5} && ${anum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
+				</c:if>
+				<c:if test="${anum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic2">
+					<div style="background-color:gray;">
+						<c:if test="${empty anum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty anum}">
+							共發生${anum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 430px; margin-left: 1042px;">
+			<c:set var="mnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building3" value="${newinfo.location}"/>
+						<c:if test="${building3 == '管理學院'}">
+							<c:set var="mnum" value="${mnum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty mnum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
+				</c:if>
+				<c:if test="${mnum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
+				</c:if>
+				<c:if test="${mnum > 5} && ${mnum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
+				</c:if>
+				<c:if test="${mnum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic3">
+					<div style="background-color:gray;">
+						<c:if test="${empty mnum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty mnum}">
+							共發生${mnum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 430px; margin-left: 945px;">
+			<c:set var="lawnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building4" value="${newinfo.location}"/>
+						<c:if test="${building4 == '法學院'}">
+							<c:set var="lawnum" value="${lawnum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty lawnum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
+				</c:if>
+				<c:if test="${lawnum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
+				</c:if>
+				<c:if test="${lawnum > 5} && ${lawnum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
+				</c:if>
+				<c:if test="${lawnum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic4">
+					<div style="background-color:gray;">
+						<c:if test="${empty lawnum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty lawnum}">
+							共發生${lawnum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 220px; margin-left: 880px;">
+			<c:set var="snum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building5" value="${newinfo.location}"/>
+						<c:if test="${building5 == '理學院'}">
+							<c:set var="snum" value="${snum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty snum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
+				</c:if>
+				<c:if test="${snum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
+				</c:if>
+				<c:if test="${snum > 5} && ${snum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
+				</c:if>
+				<c:if test="${snum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic5">
+					<div style="background-color:gray;">
+						<c:if test="${empty snum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty snum}">
+							共發生${snum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 185px; margin-left: 560px;">
+			<c:set var="hnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building6" value="${newinfo.location}"/>
+						<c:if test="${building6 == '人文社會科學院'}">
+							<c:set var="hnum" value="${hnum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty hnum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
+				</c:if>
+				<c:if test="${hnum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
+				</c:if>
+				<c:if test="${hnum > 5} && ${hnum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
+				</c:if>
+				<c:if test="${hnum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic6">
+					<div style="background-color:gray;">
+						<c:if test="${empty hnum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty hnum}">
+							共發生${hnum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 135px; margin-left: 375px;">
+			<c:set var="s2num" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building7" value="${newinfo.location}"/>
+						<c:if test="${building7 == '學二宿舍'}">
+							<c:set var="s2num" value="${s2num+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty s2num}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
+				</c:if>
+				<c:if test="${s2num <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
+				</c:if>
+				<c:if test="${s2num > 5} && ${s2num <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
+				</c:if>
+				<c:if test="${s2num > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic7">
+					<div style="background-color:gray;">
+						<c:if test="${empty s2num}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty s2num}">
+							共發生${s2num}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 180px; margin-left: 330px;">
+			<c:set var="s1num" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building8" value="${newinfo.location}"/>
+						<c:if test="${building8 == '學一宿舍'}">
+							<c:set var="s1num" value="${s1num+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty s1num}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
+				</c:if>
+				<c:if test="${s1num <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
+				</c:if>
+				<c:if test="${s1num > 5} && ${s1num <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
+				</c:if>
+				<c:if test="${s1num > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic8">
+					<div style="background-color:gray;">
+						<c:if test="${empty s1num}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty s1num}">
+							共發生${s1num}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 220px; margin-left: 298px;">
+			<c:set var="tnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building9" value="${newinfo.location}"/>
+						<c:if test="${building9 == '教職員宿舍'}">
+							<c:set var="tnum" value="${tnum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty tnum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
+				</c:if>
+				<c:if test="${tnum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
+				</c:if>
+				<c:if test="${tnum > 5} && ${tnum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
+				</c:if>
+				<c:if test="${tnum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic9">
+					<div style="background-color:gray;">
+						<c:if test="${empty tnum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty tnum}">
+							共發生${tnum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 300px; margin-left: 340px;">
+			<c:set var="spnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building10" value="${newinfo.location}"/>
+						<c:if test="${building10 == '運健休大樓'}">
+							<c:set var="spnum" value="${spnum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty tnum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse10()" onmouseout="mouse10()">
+				</c:if>
+				<c:if test="${tnum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse10()" onmouseout="mouse10()">
+				</c:if>
+				<c:if test="${tnum > 5} && ${tnum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse10()" onmouseout="mouse10()">
+				</c:if>
+				<c:if test="${tnum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse10" onmouseout="mouse10()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic10">
+					<div style="background-color:gray;">
+						<c:if test="${empty spnum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty spnum}">
+							共發生${spnum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 400px; margin-left: 200px;">
+			<c:set var="ennum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building11" value="${newinfo.location}"/>
+						<c:if test="${building11 == '工學院'}">
+							<c:set var="ennum" value="${ennum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty ennum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse11()" onmouseout="mouse11()">
+				</c:if>
+				<c:if test="${ennum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse11()" onmouseout="mouse11()">
+				</c:if>
+				<c:if test="${ennum > 5} && ${ennum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse11()" onmouseout="mouse11()">
+				</c:if>
+				<c:if test="${ennum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse11" onmouseout="mouse11()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic11">
+					<div style="background-color:gray;">
+						<c:if test="${empty ennum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty ennum}">
+							共發生${ennum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 530px; margin-left: 250px;">
+			<c:set var="comnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building12" value="${newinfo.location}"/>
+						<c:if test="${building12 == '綜合第一大樓'}">
+							<c:set var="comnum" value="${comnum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty comnum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse12()" onmouseout="mouse12()">
+				</c:if>
+				<c:if test="${comnum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse12()" onmouseout="mouse12()">
+				</c:if>
+				<c:if test="${comnum > 5} && ${comnum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse12()" onmouseout="mouse12()">
+				</c:if>
+				<c:if test="${comnum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse12" onmouseout="mouse12()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic12">
+					<div style="background-color:gray;">
+						<c:if test="${empty comnum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty comnum}">
+							共發生${comnum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="pos2" style="margin-top: 550px; margin-left: 410px;">
+			<c:set var="wnum" value="0"/>
+				<c:forEach var="newinfo" items="${newinfo}">
+					<c:set var="building13" value="${newinfo.location}"/>
+						<c:if test="${building13 == '風雨球場'}">
+							<c:set var="wnum" value="${wnum+1}"/>
+						</c:if>
+				</c:forEach>
+				<c:if test="${empty wnum}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse13()" onmouseout="mouse13()">
+				</c:if>
+				<c:if test="${wnum <= 5}">
+					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse13()" onmouseout="mouse13()">
+				</c:if>
+				<c:if test="${wnum > 5} && ${wnum <= 10}">
+					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse13()" onmouseout="mouse13()">
+				</c:if>
+				<c:if test="${wnum > 10}">
+					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse13" onmouseout="mouse13()">
+				</c:if>
+				
+			<div>
+				<div class="talksize" style="visibility: hidden;" id="pic13">
+					<div style="background-color:gray;">
+						<c:if test="${empty wnum}">
+							共發生0件
+						</c:if>
+						<c:if test="${not empty wnum}">
+							共發生${wnum}件
+						</c:if>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<center>
+		<h1 style="font-family: Microsoft JhengHei;">
+		<hr style="width:39.3%; display:inline-block;" size="4" color="gray">
+			<a name="picture">
+				校園疫情統計
+			</a>
+		<hr style="width:39.3%; display:inline-block;" size="4" color="gray">
+		</h1>
+		<div>
+			<jsp:include page="/WEB-INF/jsp/Analysis.jsp" />
+		</div>
+		</center>
 	<script src="resources/js/jquery-3.2.1.min.js"></script>
 	<script src="resources/js/slider.js"></script>
 	<script src="resources/js/accordion.js"></script>
