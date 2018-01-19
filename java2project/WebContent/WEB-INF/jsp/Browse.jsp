@@ -15,7 +15,7 @@
 		}
 		.talksize
 		{
-			width: 50px;
+			width: 125px;
 			height: 50px;
 		}
 		.bodysize
@@ -611,15 +611,13 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic">
-					<div style="background-color:gray;">
-						<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty lnum}">
 							共發生0件
 						</c:if>
 						<c:if test="${not empty lnum}">
 							共發生${lnum}件
 						</c:if>
-					</div>
 					</div>
 				</div>
 			</div>
@@ -650,7 +648,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic2">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty anum}">
 							共發生0件
 						</c:if>
@@ -687,7 +685,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic3">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty mnum}">
 							共發生0件
 						</c:if>
@@ -724,7 +722,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic4">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty lawnum}">
 							共發生0件
 						</c:if>
@@ -761,7 +759,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic5">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty snum}">
 							共發生0件
 						</c:if>
@@ -798,7 +796,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic6">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty hnum}">
 							共發生0件
 						</c:if>
@@ -835,7 +833,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic7">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty s2num}">
 							共發生0件
 						</c:if>
@@ -872,7 +870,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic8">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty s1num}">
 							共發生0件
 						</c:if>
@@ -909,7 +907,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic9">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty tnum}">
 							共發生0件
 						</c:if>
@@ -946,7 +944,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic10">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty spnum}">
 							共發生0件
 						</c:if>
@@ -983,7 +981,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic11">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty ennum}">
 							共發生0件
 						</c:if>
@@ -1020,7 +1018,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic12">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty comnum}">
 							共發生0件
 						</c:if>
@@ -1057,7 +1055,7 @@
 				
 			<div>
 				<div class="talksize" style="visibility: hidden;" id="pic13">
-					<div style="background-color:gray;">
+					<div style="background-color:white;">
 						<c:if test="${empty wnum}">
 							共發生0件
 						</c:if>
