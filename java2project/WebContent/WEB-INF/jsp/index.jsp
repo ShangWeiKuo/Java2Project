@@ -120,7 +120,7 @@
 			background-color: #32b3bf;
 			color: #fff;
 			display: block;
-			width: 100%;
+			width: 400px;
 			padding: 1.01em 0.38em 0.5em 0.7em;
 			margin: 0;
 			border-top: 1px solid #666
@@ -221,12 +221,6 @@
 			padding-left: 50px;
 			vertical-align: 25px;
   		}
-  		.top-button
-  		{
-  			
-			/*padding-left: 50px;*/
-			
-  		}
   		.top-button-bgcolor
   		{
   			color: #000000;
@@ -290,11 +284,15 @@
 							</a>
 							<div class="accordion-panel" >
 								<div class="top-button-bgcolor">
-									<a href="#case" style="font-family: Microsoft JhengHei;">我要報案</a>
+									<a href="#case" style="font-family: Microsoft JhengHei; font-size:20px;">我要報案</a>
 									&nbsp;
-									<a href="#picture" style="font-family: Microsoft JhengHei;">校園巡邏案件現況</a>
+									<a href="${pageContext.request.contextPath}/query?name=&phone=&location=&content=#case2" style="font-family: Microsoft JhengHei; font-size:20px;">報案資料表</a>
 									&nbsp;
-									<a href="http://www.nuk.edu.tw/bin/home.php" target="new" style="font-family: Microsoft JhengHei;">回高大</a> 
+									<a href="${pageContext.request.contextPath}/query?name=&phone=&location=&content=#picture" style="font-family: Microsoft JhengHei; font-size:20px;">校園疫情案件現況</a>
+									&nbsp;
+									<a href="${pageContext.request.contextPath}/query?name=&phone=&location=&content=#analysis" style="font-family: Microsoft JhengHei; font-size:20px;">校園疫情統計</a>
+									&nbsp;
+									<a href="http://www.nuk.edu.tw/bin/home.php" target="new" style="font-family: Microsoft JhengHei; font-size:20px;">回高大</a> 
 								</div>	
 							</div>
 						</li>
@@ -356,7 +354,7 @@
 	 
 	<form:form  id="form"  modelAttribute="customers">
 		<center>
-		<fieldset style="width:300px">
+		<fieldset style="width:300px; margin-bottom:100px;">
 		<table class="frame">
 			<tr>
 				<td>報案人</td>
@@ -380,11 +378,13 @@
 		<button type="reset">清除</button>
 		</fieldset>
 		</center>
-		
-		
 	</form:form>
 	 
 	</center>
+	
+	<script src="resources/js/jquery-3.2.1.min.js"></script>
+	<script src="resources/js/slider.js"></script>
+	<script src="resources/js/accordion.js"></script>
 	
 	<script>
 
