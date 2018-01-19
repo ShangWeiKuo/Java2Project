@@ -67,7 +67,7 @@ public class ServiceFacade {
 		model.addAttribute("location", newinfo.getLocation());
 		model.addAttribute("content", newinfo.getContent());
     	
-    	return "redirect:query";
+    	return "redirect:query"; // query
 	}
     
     @RequestMapping(value="/update")
@@ -88,7 +88,7 @@ public class ServiceFacade {
    		model.addAttribute("location", newinfo.getLocation());
    		model.addAttribute("content", newinfo.getContent());
        	
-       	return "redirect:query";
+       	return "redirect:query"; // query
    	}
        
   /*  
@@ -167,6 +167,6 @@ public class ServiceFacade {
 		model.addAttribute("content", content);
 		model.addAttribute("no", no);
 				
-		return "redirect:query";
+		return "redirect:query"; // query
 	}
 }

@@ -52,6 +52,7 @@ public class HBMCustomerDao implements CustomerDao {
 		for (Map.Entry<String, String> entry : conditions.entrySet()) {
 			criteria.add(Restrictions.like(entry.getKey(), makeLikeString(entry.getValue())));
 		}
+		
 		criteria.addOrder(Order.asc("no"));		
 		
 		return criteria.list();
