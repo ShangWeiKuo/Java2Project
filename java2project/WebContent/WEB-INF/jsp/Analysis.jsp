@@ -37,14 +37,17 @@
 					<c:set var="lnum" value="${lnum+1}"/>
 				</c:if>
 		</c:forEach>
+		
 		<c:if test="${lnum <= 5}">
-			<c:set var="color" value="#00FF00"/>
+			<c:set var="color1" value="#00FF00"/>
 		</c:if>
-		<c:if test="${lnum > 5} && ${lnum <= 10}">
-			<c:set var="color" value="#FFFF00"/>
+		<c:if test="${lnum > 5}">
+			<c:if test="${lnum <= 10}">
+				<c:set var="color1" value="#FFFF00"/>
+			</c:if>
 		</c:if>
 		<c:if test="${lnum > 10}">
-			<c:set var="color" value="#FF0000"/>
+			<c:set var="color1" value="#FF0000"/>
 		</c:if>
 		
 		<c:set var="anum" value="0"/>
@@ -55,13 +58,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${anum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color2" value="#00FF00"/>
 			</c:if>
-			<c:if test="${anum > 5} && ${anum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${anum > 5}">
+				<c:if test="${anum <= 10}">
+					<c:set var="color2" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${anum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color2" value="#FF0000"/>
 			</c:if>
 		
 		<c:set var="mnum" value="0"/>
@@ -72,13 +77,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${mnum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color3" value="#00FF00"/>
 			</c:if>
-			<c:if test="${mnum > 5} && ${mnum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${mnum > 5}">
+				<c:if test="${mnum <= 10}">
+					<c:set var="color3" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${mnum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color3" value="#FF0000"/>
 			</c:if>
 		
 		<c:set var="lawnum" value="0"/>
@@ -89,13 +96,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${lawnum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color4" value="#00FF00"/>
 			</c:if>
-			<c:if test="${lawnum > 5} && ${lawnum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${lawnum > 5}">
+				<c:if test="${lawnum <= 10}">
+					<c:set var="color4" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${lawnum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color4" value="#FF0000"/>
 			</c:if>
 			
 		<c:set var="snum" value="0"/>
@@ -106,13 +115,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${snum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color5" value="#00FF00"/>
 			</c:if>
-			<c:if test="${snum > 5} && ${snum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${snum > 5}">
+				<c:if test="${snum <= 10}">
+					<c:set var="color5" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${snum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color5" value="#FF0000"/>
 			</c:if>
 		
 		<c:set var="hnum" value="0"/>
@@ -123,13 +134,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${hnum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color6" value="#00FF00"/>
 			</c:if>
-			<c:if test="${hnum > 5} && ${hnum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${hnum > 5}">
+				<c:if test="${hnum <= 10}">
+					<c:set var="color6" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${hnum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color6" value="#FF0000"/>
 			</c:if>
 			
 		<c:set var="s2num" value="0"/>
@@ -140,13 +153,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${s2num <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color7" value="#00FF00"/>
 			</c:if>
-			<c:if test="${s2num > 5} && ${s2num <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${s2num > 5}">
+				<c:if test="${s2num <= 10}">
+					<c:set var="color7" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${s2num > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color7" value="#FF0000"/>
 			</c:if>
 			
 		<c:set var="s1num" value="0"/>
@@ -157,13 +172,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${s1num <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color8" value="#00FF00"/>
 			</c:if>
-			<c:if test="${s1num > 5} && ${s1num <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${s1num > 5}">
+				<c:if test="${s1num <= 10}">
+					<c:set var="color8" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${s1num > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color8" value="#FF0000"/>
 			</c:if>
 			
 		<c:set var="tnum" value="0"/>
@@ -174,15 +191,16 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${tnum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color9" value="#00FF00"/>
 			</c:if>
-			<c:if test="${tnum > 5} && ${tnum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${tnum > 5}">
+				<c:if test="${tnum <= 10}">
+					<c:set var="color9" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${tnum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color9" value="#FF0000"/>
 			</c:if>
-			
 			
 		<c:set var="spnum" value="0"/>
 			<c:forEach var="newinfo" items="${newinfo}">
@@ -192,13 +210,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${spnum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color10" value="#00FF00"/>
 			</c:if>
-			<c:if test="${spnum > 5} && ${spnum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${spnum > 5}">
+				<c:if test="${spnum <= 10}">
+					<c:set var="color10" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${spnum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color10" value="#FF0000"/>
 			</c:if>
 			
 		<c:set var="ennum" value="0"/>
@@ -209,13 +229,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${ennum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color11" value="#00FF00"/>
 			</c:if>
-			<c:if test="${ennum > 5} && ${ennum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${ennum > 5}">
+				<c:if test="${ennum <= 10}">
+					<c:set var="color11" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${ennum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color11" value="#FF0000"/>
 			</c:if>
 			
 		<c:set var="comnum" value="0"/>
@@ -226,13 +248,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${comnum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color12" value="#00FF00"/>
 			</c:if>
-			<c:if test="${comnum > 5} && ${comnum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${comnum > 5}">
+				<c:if test="${comnum <= 10}">
+					<c:set var="color12" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${comnum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color12" value="#FF0000"/>
 			</c:if>
 			
 		<c:set var="wnum" value="0"/>
@@ -243,13 +267,15 @@
 					</c:if>
 			</c:forEach>
 			<c:if test="${wnum <= 5}">
-				<c:set var="color" value="#00FF00"/>
+				<c:set var="color13" value="#00FF00"/>
 			</c:if>
-			<c:if test="${wnum > 5} && ${wnum <= 10}">
-				<c:set var="color" value="#FFFF00"/>
+			<c:if test="${wnum > 5}">
+				<c:if test="${wnum <= 10}">
+					<c:set var="color13" value="#FFFF00"/>
+				</c:if>
 			</c:if>
 			<c:if test="${wnum > 10}">
-				<c:set var="color" value="#FF0000"/>
+				<c:set var="color13" value="#FF0000"/>
 			</c:if>
 		
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -259,19 +285,19 @@
 	    function drawChart() {
 	      var data = google.visualization.arrayToDataTable([
 	        ["Element", "案件數", { role: "style" }],
-	        ["圖資館", ${lnum}, "${color}"],
-	        ["行政大樓", ${anum}, "${color}"],
-	        ["管理學院", ${mnum}, "${color}"],
-	        ["法學院", ${lawnum}, "${color}"],
-	        ["理學院", ${snum}, "${color}"],
-	        ["人文社會科學院", ${hnum}, "${color}"],
-	        ["學二宿舍", ${s2num}, "${color}"],
-	        ["學一宿舍", ${s1num}, "${color}"],
-	        ["教職員宿舍", ${tnum}, "${color}"],
-	        ["運健休大樓", ${spnum}, "${color}"],
-	        ["工學院", ${ennum}, "${color}"],
-	        ["綜合第一大樓", ${comnum}, "${color}"],
-	        ["風雨球場", ${wnum}, "${color}"]
+	        ["圖資館", ${lnum}, "${color1}"],
+	        ["行政大樓", ${anum}, "${color2}"],
+	        ["管理學院", ${mnum}, "${color3}"],
+	        ["法學院", ${lawnum}, "${color4}"],
+	        ["理學院", ${snum}, "${color5}"],
+	        ["人文社會科學院", ${hnum}, "${color6}"],
+	        ["學二宿舍", ${s2num}, "${color7}"],
+	        ["學一宿舍", ${s1num}, "${color8}"],
+	        ["教職員宿舍", ${tnum}, "${color9}"],
+	        ["運健休大樓", ${spnum}, "${color10}"],
+	        ["工學院", ${ennum}, "${color11}"],
+	        ["綜合第一大樓", ${comnum}, "${color12}"],
+	        ["風雨球場", ${wnum}, "${color13}"]
 	      ]);
 	
 	      var view = new google.visualization.DataView(data);
