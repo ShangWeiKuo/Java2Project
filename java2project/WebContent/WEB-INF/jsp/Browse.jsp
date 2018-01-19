@@ -455,11 +455,13 @@
 							</a>
 							<div class="accordion-panel" >
 								<div class="top-button-bgcolor">
-									<a href="#case" style="font-family: Microsoft JhengHei;">我要報案</a>
-									&nbsp;
-									<a href="#picture" style="font-family: Microsoft JhengHei;">校園巡邏案件現況</a>
-									&nbsp;
-									<a href="http://www.nuk.edu.tw/bin/home.php" target="new" style="font-family: Microsoft JhengHei;">回高大</a> 
+									<a href="#case2" style="font-family: Microsoft JhengHei; font-size:20px;">報案資料表</a>
+									
+									<a href="#picture" style="font-family: Microsoft JhengHei; font-size:20px;">校園疫情案件現況</a>
+									
+									<a href="#analysis" style="font-family: Microsoft JhengHei; font-size:20px;">校園疫情統計</a>
+									
+									<a href="http://www.nuk.edu.tw/bin/home.php" target="new" style="font-family: Microsoft JhengHei; font-size:20px;">回高大</a> 
 								</div>	
 							</div>
 						</li>
@@ -486,9 +488,9 @@
 	<center>
 	<h1 style="font-family: Microsoft JhengHei;">
 		<hr style="width:41%; display:inline-block;" size="3" color="gray">
-			
+			<a name="case2">
 				報案資料表
-			
+			</a>
 		<hr style="width:41%; display:inline-block;" size="3" color="gray">
 	</h1>
 	<br>
@@ -598,11 +600,13 @@
 				<c:if test="${lnum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
 				</c:if>
-				<c:if test="${lnum > 5} && ${lnum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+				<c:if test="${lnum > 5}">
+					<c:if test="${lnum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+					</c:if>
 				</c:if>
 				<c:if test="${lnum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse()" onmouseout="mouse()">
 				</c:if>
 				
 			<div>
@@ -635,11 +639,13 @@
 				<c:if test="${anum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
 				</c:if>
-				<c:if test="${anum > 5} && ${anum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
+				<c:if test="${anum > 5}">
+					<c:if test="${anum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
+					</c:if>
 				</c:if>
 				<c:if test="${anum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse2()" onmouseout="mouse2()">
 				</c:if>
 				
 			<div>
@@ -670,11 +676,13 @@
 				<c:if test="${mnum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
 				</c:if>
-				<c:if test="${mnum > 5} && ${mnum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
+				<c:if test="${mnum > 5}">
+					<c:if test="${mnum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
+					</c:if>
 				</c:if>
 				<c:if test="${mnum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse3()" onmouseout="mouse3()">
 				</c:if>
 				
 			<div>
@@ -705,11 +713,13 @@
 				<c:if test="${lawnum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
 				</c:if>
-				<c:if test="${lawnum > 5} && ${lawnum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
+				<c:if test="${lawnum > 5}">
+					<c:if test="${lawnum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
+					</c:if>
 				</c:if>
 				<c:if test="${lawnum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse4()" onmouseout="mouse4()">
 				</c:if>
 				
 			<div>
@@ -740,11 +750,13 @@
 				<c:if test="${snum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
 				</c:if>
-				<c:if test="${snum > 5} && ${snum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
+				<c:if test="${snum > 5}">
+					<c:if test="${snum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
+					</c:if>
 				</c:if>
 				<c:if test="${snum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse5()" onmouseout="mouse5()">
 				</c:if>
 				
 			<div>
@@ -775,11 +787,13 @@
 				<c:if test="${hnum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
 				</c:if>
-				<c:if test="${hnum > 5} && ${hnum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
+				<c:if test="${hnum > 5}">
+					<c:if test="${hnum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
+					</c:if>
 				</c:if>
 				<c:if test="${hnum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse6()" onmouseout="mouse6()">
 				</c:if>
 				
 			<div>
@@ -810,11 +824,13 @@
 				<c:if test="${s2num <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
 				</c:if>
-				<c:if test="${s2num > 5} && ${s2num <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
+				<c:if test="${s2num > 5}">
+					<c:if test="${s2num <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
+					</c:if>
 				</c:if>
 				<c:if test="${s2num > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse7()" onmouseout="mouse7()">
 				</c:if>
 				
 			<div>
@@ -845,11 +861,13 @@
 				<c:if test="${s1num <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
 				</c:if>
-				<c:if test="${s1num > 5} && ${s1num <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
+				<c:if test="${s1num > 5}">
+					<c:if test="${s1num <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
+					</c:if>
 				</c:if>
 				<c:if test="${s1num > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse8()" onmouseout="mouse8()">
 				</c:if>
 				
 			<div>
@@ -880,11 +898,13 @@
 				<c:if test="${tnum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
 				</c:if>
-				<c:if test="${tnum > 5} && ${tnum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
+				<c:if test="${tnum > 5}">
+					<c:if test="${tnum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
+					</c:if>
 				</c:if>
 				<c:if test="${tnum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse9()" onmouseout="mouse9()">
 				</c:if>
 				
 			<div>
@@ -909,17 +929,19 @@
 							<c:set var="spnum" value="${spnum+1}"/>
 						</c:if>
 				</c:forEach>
-				<c:if test="${empty tnum}">
+				<c:if test="${empty spnum}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse10()" onmouseout="mouse10()">
 				</c:if>
-				<c:if test="${tnum <= 5}">
+				<c:if test="${spnum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse10()" onmouseout="mouse10()">
 				</c:if>
-				<c:if test="${tnum > 5} && ${tnum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse10()" onmouseout="mouse10()">
+				<c:if test="${spnum > 5}">
+					<c:if test="${spnum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse10()" onmouseout="mouse10()">
+					</c:if>
 				</c:if>
-				<c:if test="${tnum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse10" onmouseout="mouse10()">
+				<c:if test="${spnum > 10}">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse10()" onmouseout="mouse10()">
 				</c:if>
 				
 			<div>
@@ -950,11 +972,13 @@
 				<c:if test="${ennum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse11()" onmouseout="mouse11()">
 				</c:if>
-				<c:if test="${ennum > 5} && ${ennum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse11()" onmouseout="mouse11()">
+				<c:if test="${ennum > 5}">
+					<c:if test="${ennum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse11()" onmouseout="mouse11()">
+					</c:if>
 				</c:if>
 				<c:if test="${ennum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse11" onmouseout="mouse11()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse11()" onmouseout="mouse11()">
 				</c:if>
 				
 			<div>
@@ -985,11 +1009,13 @@
 				<c:if test="${comnum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse12()" onmouseout="mouse12()">
 				</c:if>
-				<c:if test="${comnum > 5} && ${comnum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse12()" onmouseout="mouse12()">
+				<c:if test="${comnum > 5}">
+					<c:if test="${comnum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse12()" onmouseout="mouse12()">
+					</c:if>
 				</c:if>
 				<c:if test="${comnum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse12" onmouseout="mouse12()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse12()" onmouseout="mouse12()">
 				</c:if>
 				
 			<div>
@@ -1020,11 +1046,13 @@
 				<c:if test="${wnum <= 5}">
 					<img src="resources/image/check-in-g2.png" class="checsize" onmouseover="mouse13()" onmouseout="mouse13()">
 				</c:if>
-				<c:if test="${wnum > 5} && ${wnum <= 10}">
-					<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse13()" onmouseout="mouse13()">
+				<c:if test="${wnum > 5}">
+					<c:if test="${wnum <= 10}">
+						<img src="resources/image/check-in-y.png" class="checsize" onmouseover="mouse13()" onmouseout="mouse13()">
+					</c:if>
 				</c:if>
 				<c:if test="${wnum > 10}">
-					<img src="resources/image/check-in-r.png" class="checsize" onmouseover="mouse13" onmouseout="mouse13()">
+					<img src="resources/image/check-in-r2.png" class="checsize" onmouseover="mouse13()" onmouseout="mouse13()">
 				</c:if>
 				
 			<div>
@@ -1081,7 +1109,7 @@
 		<center>
 		<h1 style="font-family: Microsoft JhengHei;">
 		<hr style="width:39.3%; display:inline-block;" size="4" color="gray">
-			<a name="picture">
+			<a name="analysis">
 				校園疫情統計
 			</a>
 		<hr style="width:39.3%; display:inline-block;" size="4" color="gray">
