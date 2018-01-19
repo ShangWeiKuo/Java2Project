@@ -248,15 +248,17 @@
 					<ul class="accordion" id="navWrapper">
 						<li>
 							<a class="accordion-control">
-								<!-- <img src="resources/image/button2.png" height="36px"> -->
+								<img src="resources/image/button2.png" height="36px">
 							</a>
 							<div class="accordion-panel" >
 								<div class="top-button-bgcolor">
-									<a href="#case" style="font-family: Microsoft JhengHei;">我要報案</a>
-									&nbsp;
-									<a href="#picture" style="font-family: Microsoft JhengHei;">校園巡邏案件現況</a>
-									&nbsp;
-									<a href="http://www.nuk.edu.tw/bin/home.php" target="new" style="font-family: Microsoft JhengHei;">回高大</a> 
+									<a href="${pageContext.request.contextPath}/query?name=&phone=&location=&content=#case2" style="font-family: Microsoft JhengHei; font-size:20px;">報案資料表</a>
+									
+									<a href="${pageContext.request.contextPath}/query?name=&phone=&location=&content=#picture" style="font-family: Microsoft JhengHei; font-size:20px;">校園疫情案件現況</a>
+									
+									<a href="${pageContext.request.contextPath}/query?name=&phone=&location=&content=#analysis" style="font-family: Microsoft JhengHei; font-size:20px;">校園疫情統計</a>
+									
+									<a href="http://www.nuk.edu.tw/bin/home.php" target="new" style="font-family: Microsoft JhengHei; font-size:20px;">回高大</a> 
 								</div>	
 							</div>
 						</li>
@@ -280,6 +282,11 @@
 		<button	type="button" onclick="goBack()">回上一頁</button>
 	</form:form>
 	</div>
+	
+	<script src="resources/js/jquery-3.2.1.min.js"></script>
+	<script src="resources/js/slider.js"></script>
+	<script src="resources/js/accordion.js"></script>
+	
 	<script>
 		function doConfirm() {
 			return confirm("確定存檔嗎 ?");
